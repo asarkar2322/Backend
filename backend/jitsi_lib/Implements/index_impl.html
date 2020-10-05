@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type = "text/javascript"></script>
+    <script src="libs/jquery-2.1.1.min.js"></script>
+    <script src="libs/strophe/strophe.js"></script>
+    <script src="libs/strophe/strophe.disco.min.js?v=1"></script>
+    <script src="https://meet.jit.si/external_api.js"></script>
+   <!-- <script src="../../lib-jitsi-meet.min.js"></script> -->
+	<script src="../lib-jitsi-meet.min.js"></script>
+    <!--<script type="text/javascript" src="cobrowser.js"></script>-->
+    <script src="example_impl.js" ></script>
+    <script src="https://togetherjs.com/togetherjs-min.js"></script>
+
+    <script>
+    (function(w,t,c,p,s,e){p=new Promise(function(r){w[c]={client:function(){if(!s){
+    s=document.createElement(t);s.src='https://js.cobrowse.io/CobrowseIO.js';s.async=1;
+    e=document.getElementsByTagName(t)[0];e.parentNode.insertBefore(s,e);s.onload=function()
+    {r(w[c]);};}return p;}};});})(window,'script','CobrowseIO');
+
+    CobrowseIO.license = "UEDY7hQTPBWFIA";
+    CobrowseIO.client().then(function(){
+        CobrowseIO.start();
+    });
+</script>
+</head>
+<body>
+<a href="#" onclick="unload()">Close ALL</a></body></html></br></br>
+    <a href="#" onclick="switchVideo()">ScreenShare</a><br/></br>
+	<a href="#" onclick="videocall()">makevideocall</a><br/></br>
+    <a href="#" onclick="startChat()">StartChat</a><br/></br>
+    <a href="#" onclick="startAudioCall()">StartAudioCall</a><br/></br>
+   <!-- <a href="#" onclick="co_browserstart()">Co-Browser</a><br/></br>-->
+<button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+
+    <div id="audioOutputSelectWrapper" style="display: none;">
+        Change audio output device
+        <select id="audioOutputSelect" onchange="changeAudioOutput(this)"></select>
+    </div>
+    <!-- <video id="localVideo" autoplay="true"></video> -->
+    <!--<audio id="localAudio" autoplay="true" muted="true"></audio>-->
+</body>
+</html>
